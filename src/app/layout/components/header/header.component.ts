@@ -60,9 +60,9 @@ export class HeaderComponent implements OnInit {
     }
 
     onLoggedout() {
-        localStorage.removeItem('identidadAlumno');
-        localStorage.removeItem('identidadProfesor');
-        localStorage.clear();
+        sessionStorage.removeItem('identidadAlumno');
+        sessionStorage.removeItem('identidadProfesor');
+        sessionStorage.clear();
     }
 
     changeLang(language: string) {

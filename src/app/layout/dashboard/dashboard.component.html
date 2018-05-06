@@ -25,19 +25,19 @@
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
     <hr />
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8" id="mostrarClase">
             <div class="card card-default">
                 <div class="card-header">
                     <i class="fa fa-clock-o fa-fw"></i> Clases Pendientes
                 </div>
                 <!-- /.card-header -->
-                <app-timeline></app-timeline>
+                <app-clases-futuras></app-clases-futuras>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" *ngIf="identidadProfesor">
             <div class="card card-default mb-3">
                 <div class="card-header">
                     <i class="fa fa-bell fa-fw"></i> Notifications card

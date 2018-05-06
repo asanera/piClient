@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from '../service/auth.service';
+import { PerfilModule } from '../perfil/perfil.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AuthService } from '../service/auth.service';
         CommonModule,
         LayoutRoutingModule,
         TranslateModule,
+        PerfilModule,
         NgbDropdownModule.forRoot()
     ],
     declarations: [LayoutComponent, SidebarComponent, HeaderComponent],

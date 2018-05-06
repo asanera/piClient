@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Alumno } from '../../models/alumno';
 import { Profesor } from '../../models/profesor';
@@ -10,7 +10,7 @@ import { AuthService } from '../../service/auth.service';
     styleUrls: ['./dashboard.component.scss'],
     animations: [routerTransition()]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit  {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
     public identidadProfesor: Profesor;
@@ -20,9 +20,7 @@ export class DashboardComponent implements OnInit {
     constructor(private authService:AuthService) {
         this.identidadAlumno = authService.getAlumno();
         this.identidadProfesor = authService.getProfesor();
-        console.log(this.identidadAlumno);
         this.saludo = this.crearSaludo();
-        console.log(this.saludo);
         /*this.alerts.push(
             {
                 id: 1,
@@ -50,6 +48,14 @@ export class DashboardComponent implements OnInit {
         }
             
     }
+
+    ngAfterViewInit() {
+        if(this.identidadAlumno != null){
+            console.log(this.identidadAlumno);
+            console.log("entro");
+            document.getElementById('mostrarClase').className = 'col-lg-12';
+        }
+      }
     
     ngOnInit() {}
 

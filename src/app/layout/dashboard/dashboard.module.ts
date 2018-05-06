@@ -11,6 +11,9 @@ import {
 } from './components';
 import { StatModule } from '../../shared';
 import { AuthService } from '../../service/auth.service';
+import { ClasesModule } from '../../clases/clases.module';
+import { ClasesFuturasComponent } from '../../clases/clases-futuras/clases-futuras.component';
+
 
 @NgModule({
     imports: [
@@ -24,7 +27,9 @@ import { AuthService } from '../../service/auth.service';
         DashboardComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent
+        ChatComponent,
+        ClasesFuturasComponent
+        
     ],
     providers: [AuthService]
 })
